@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ImageUploadScreen from './ImageUploadScreen';
-import ImageDisplayScreen from './ImageDisplayScreen';
-import PrintToPDFScreen from "./PrintToPDFScreen";
+import ImageUploadScreen from './screens/ImageUploadScreen';
+import ImageDisplayScreen from './screens/ImageDisplayScreen';
+import PrintToPDFScreen from "./screens/PrintToPDFScreen";
 
 const Tab = createBottomTabNavigator();
 
