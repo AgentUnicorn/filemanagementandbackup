@@ -1,18 +1,9 @@
 // ImageDisplayScreen.js
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, ScrollView, StyleSheet, Button } from 'react-native';
-import AWS from "aws-sdk";
 import * as FileSystem from 'expo-file-system';
 import * as MediaLibrary from 'expo-media-library';
-
-const awsBucket = process.env.EXPO_PUBLIC_AWS_BUCKET_NAME;
-const s3 = new AWS.S3({
-    region: process.env.EXPO_PUBLIC_AWS_REGION,
-    credentials: {
-        accessKeyId: process.env.EXPO_PUBLIC_AWS_KEY,
-        secretAccessKey: process.env.EXPO_PUBLIC_AWS_SECRET,
-    },
-});
+import { s3, awsBucket } from '../configs/awsConfig';
 
 export default function ImageDisplayScreen() {
     const [images, setImages] = useState([]);

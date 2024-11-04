@@ -10,6 +10,13 @@
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/@react-native/gradle-plugin" />
         <option name="gradleJvm" value="20" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/node_modules/@react-native/gradle-plugin" />
+            <option value="$PROJECT_DIR$/node_modules/@react-native/gradle-plugin/react-native-gradle-plugin" />
+            <option value="$PROJECT_DIR$/node_modules/@react-native/gradle-plugin/settings-plugin" />
+          </set>
+        </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/node_modules/expo-asset/android" />

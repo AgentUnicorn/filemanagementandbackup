@@ -9,16 +9,7 @@ import { useState, useEffect } from "react";
 import * as DocumentPicker from 'expo-document-picker';
 import * as ImagePicker from 'expo-image-picker';
 import Constants from "expo-constants";
-import AWS from 'aws-sdk';
-
-const awsBucket = process.env.EXPO_PUBLIC_AWS_BUCKET_NAME;
-const s3 = new AWS.S3({
-    region: process.env.EXPO_PUBLIC_AWS_REGION,
-    credentials: {
-        accessKeyId: process.env.EXPO_PUBLIC_AWS_KEY,
-        secretAccessKey: process.env.EXPO_PUBLIC_AWS_SECRET,
-    },
-});
+import { s3, awsBucket } from '../configs/awsConfig';
 
 export default function ImageUploadScreen() {
     const [multipleFile, setMultipleFile] = useState([]);
@@ -117,10 +108,13 @@ export default function ImageUploadScreen() {
 
     };
 
+    const pickImageToGoogleDrive = async () => {};
+
     return (
         <View style={styles.container}>
             <Button title={"Browse files"} onPress={selectMultipleFile} />
-            <Button title="Pick an image from gallery" onPress={pickImage} />
+            <Button title="Upload image to S3 Bucket" onPress={pickImage} />
+            <Button title="Upload image to Google Drive" onPress={pickImageToGoogleDrive} />
 
             {percentage !== 0 && <Text style={styles.percentage}>{percentage}%</Text>}
 
